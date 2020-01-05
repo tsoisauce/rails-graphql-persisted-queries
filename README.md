@@ -22,6 +22,12 @@ Yarn install
 yarn
 ```
 
+GraphQL install (if needed)
+
+```bash
+rails generate graphql:install
+```
+
 ## Run Server
 
 To start Rails server:
