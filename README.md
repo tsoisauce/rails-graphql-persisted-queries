@@ -4,29 +4,10 @@ Ruby on Rails project to demo HTTP caching strategies.
 
 ## Installation
 
-Bundle install
-
-```bash
-bundle
-```
-
-Webpack install
-
-```bash
-rails webpacker:install
-```
-
-Yarn install
-
-```bash
-yarn
-```
-
-GraphQL install (if needed)
-
-```bash
-rails generate graphql:install
-```
+- Bundle install: `bundle`
+- Webpack install: `rails webpacker:install`
+- Yarn install: `yarn`
+- GraphQL install: `rails generate graphql:install
 
 ## GraphiQL
 
@@ -39,10 +20,7 @@ Make sure the following is included in `app/assets/config/manifest.js`
 
 ## Run Server
 
-To start Rails server:
+To start Rails server: `rails s`
 
-```bash
-rails s
-```
-
-visit `localhost:3000/graphiql` for GraphiQL interface
+visit [`localhost:3000/graphiql`](http://localhost:3000/graphiql) for GraphiQL
+visit [`localhost:3000`](http://localhost:3000) for React App
