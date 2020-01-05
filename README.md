@@ -28,6 +28,15 @@ GraphQL install (if needed)
 rails generate graphql:install
 ```
 
+## GraphiQL
+
+Make sure the following is included in `app/assets/config/manifest.js`
+
+```js
+//= link graphiql/rails/application.js
+//= link graphiql/rails/application.css
+```
+
 ## Run Server
 
 To start Rails server:
@@ -35,3 +44,5 @@ To start Rails server:
 ```bash
 rails s
 ```
+
+visit `localhost:3000/graphiql` for GraphiQL interface
