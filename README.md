@@ -2,6 +2,8 @@
 
 Ruby on Rails project to demo HTTP caching strategies.
 
+Note: `master` branch will not utalize active record to persist data. All data will be static for demostration purposes.
+
 ## Installation
 
 - Bundle install: `bundle`
@@ -17,6 +19,14 @@ Make sure the following is included in `app/assets/config/manifest.js`
 //= link graphiql/rails/application.js
 //= link graphiql/rails/application.css
 ```
+
+### Adding new Type Definitions
+
+```bash
+rails g graphql:object <object-name>
+```
+
+This will generate Type Defition to describe the shape of your data in `app/graphql/types/<object-name>_type.rb`
 
 ## Run Server
 
