@@ -7,7 +7,7 @@ Ruby on Rails project to demo HTTP caching strategies.
 - Bundle install: `bundle`
 - Webpack install: `rails webpacker:install`
 - Yarn install: `yarn`
-- GraphQL install: `rails generate graphql:install
+- GraphQL install: `rails generate graphql:install`
 
 ## GraphiQL
 
