@@ -1,6 +1,6 @@
 # Rails GraphQL Persisted Queries
 
-Demo Rails project to demo HTTP caching strategies.
+Ruby on Rails project to demo HTTP caching strategies.
 
 ## Installation
 
