@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'json'
 
 PRODUCTS = [
@@ -38,16 +39,26 @@ module Types
       'Hello World!'
     end
 
-    # products query
+    # all products query
     field :products, [Types::ProductType], null: false, description: 'Returns a list of products'
     def products
       PRODUCTS
     end
 
-    # user query
+    # all users query
     field :users, [Types::UserType], null: false, description: 'Returns a list of users'
     def users
       PRODUCTS.map { |product| product[:user] }
+    end
+
+    # query by user email
+    field :user_by_email, [Types::UserType], null: false, description: 'Returns a user by email' do
+      argument :email, String, required: true
+    end
+
+    def user_by_email(email:)
+      filtered_product_by_user = PRODUCTS.select { |product| product[:user][:email] == email }
+      filtered_product_by_user.map { |product| product[:user] }
     end
   end
 end
