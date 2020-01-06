@@ -1,0 +1,9 @@
+query ProductQuery {
+  products {
+    id
+    title
+    user {
+      email
+    }
+  }
+}

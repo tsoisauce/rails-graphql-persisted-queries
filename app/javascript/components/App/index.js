@@ -1,18 +1,7 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
-
-const ProductQuery = gql`
-  {
-    products {
-      id
-      title
-      user {
-        email
-      }
-    }
-  }
-`;
+import { ProductQuery } from "./operations.graphql";
 
 export default () => (
   <Query query={ProductQuery}>
