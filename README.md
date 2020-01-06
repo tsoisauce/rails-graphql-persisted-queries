@@ -1,6 +1,6 @@
 # Rails GraphQL Persisted Queries
 
-Ruby on Rails project to demo HTTP caching strategies.
+Ruby on Rails project to demo HTTP caching strategies. Persisted queries allows Apollo Client to refernce cached queries with a hash.  Apollo Client will attempt to make a query with a GET method before attempting a POST request for the data. 
 
 Note: `master` branch will not utalize active record to persist data. All data will be static for demostration purposes.
 
@@ -20,7 +20,7 @@ Make sure the following is included in `app/assets/config/manifest.js`
 //= link graphiql/rails/application.css
 ```
 
-### Adding new Type Definitions
+### Adding new Type Definitions with GraphQL Generator
 
 ```bash
 rails g graphql:object <object-name>
