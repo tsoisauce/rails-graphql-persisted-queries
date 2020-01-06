@@ -3,7 +3,6 @@ import { ApolloClient } from 'apollo-client';
 // cache
 import { InMemoryCache } from 'apollo-cache-inmemory';
 // links
-// import { HttpLink } from 'apollo-link-http';
 import { createHttpLink } from "apollo-link-http";
 import { onError } from 'apollo-link-error';
 import { ApolloLink, Observable } from 'apollo-link';
@@ -69,24 +68,12 @@ const createErrorLink = () => onError(({ graphQLErrors, networkError, operation 
   }
 })
 
-// http link
-// const createHttpLink = () => new HttpLink({
-//   uri: '/graphql',
-//   credentials: 'include',
-// })
+// persisted query link GET for hashes and post if doesn't exist
+const link = createPersistedQueryLink({ useGETForHashedQueries: true }).concat(
+  createHttpLink({ uri: "/graphql" })
+);
 
 // create Apollo client instance
-// export const createClient = (cache, requestLink) => {
-//   return new ApolloClient({
-//     link: ApolloLink.from([
-//       createErrorLink(),
-//       createLinkWithToken(),
-//       createHttpLink(),
-//     ]),
-//     cache,
-//   });
-// };
-const link = createPersistedQueryLink().concat(createHttpLink({ uri: "/graphql" }));
 export const createClient = (cache, requestLink) => {
   return new ApolloClient({
     link: ApolloLink.from([
